@@ -1,14 +1,10 @@
 abstract class Character {
   int _healthPoint;
   int _manaPoint;
+  Character(this._healthPoint, this._manaPoint);
 
-  void set HealthPoint(int healthPoint) {
-    _healthPoint = healthPoint;
-  }
+  int get health => this._healthPoint;
+  int get mana => this._manaPoint;
 
-  void set ManaPoint(int manaPoint) {
-    _manaPoint = manaPoint;
-  }
-
-  int basicAttack(double attack);
+  int basicAttack(int attack);
 }
