@@ -3,11 +3,10 @@ import 'package:dart_application_begin2/Skills/tyrexSkills.dart';
 
 class Tyrex extends Character implements TyrexSkills {
   @override
-  int basicAttack() {}
+  int basicAttack(double tyrexAttack) {
+    tyrexAttack = 40;
+  }
 
   @override
-  int Earthquake() {
-    // TODO: implement Earthquake
-    throw UnimplementedError();
-  }
+  int Earthquake() {}
 }

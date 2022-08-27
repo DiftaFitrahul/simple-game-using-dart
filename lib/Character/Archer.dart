@@ -3,7 +3,9 @@ import 'package:dart_application_begin2/Skills/archerSkills.dart';
 
 class Archer extends Character implements ArcherSkills {
   @override
-  int basicAttack() {}
+  int basicAttack(double archerAttack) {
+    archerAttack = 25;
+  }
 
   @override
   int HunterTiger() {}

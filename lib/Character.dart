@@ -10,5 +10,5 @@ abstract class Character {
     _manaPoint = manaPoint;
   }
 
-  int basicAttack();
+  int basicAttack(double attack);
 }
