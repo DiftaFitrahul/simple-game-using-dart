@@ -50,7 +50,7 @@ void getBattle(Character hero, Character dragon, Character tyrex) {
 
   do {
     if (hero is Warrior) {
-      int getAttack = getInstruction();
+      int getAttack = getInstructionWarrior();
       switch (getAttack) {
         case 1:
           dragonHealth = dragonHealth - hero.basicAttack(30);
@@ -60,14 +60,39 @@ void getBattle(Character hero, Character dragon, Character tyrex) {
           break;
         case 3:
           dragonHealth = dragonHealth - hero.RainSwords();
+          break;
+        default:
+          print("Input Invalid");
       }
-    } else if (hero is Archer) {}
+    } else if (hero is Archer) {
+      int getAttack = getInstructionArcher();
+      switch (getAttack) {
+        case 1:
+          dragonHealth = dragonHealth - hero.basicAttack(43);
+          break;
+        case 2:
+          dragonHealth = dragonHealth - hero.HunterTiger();
+          break;
+        case 3:
+          dragonHealth = dragonHealth - hero.SpectrumArrow();
+          break;
+        default:
+          print("Input Invalid");
+      }
+    }
   } while (dragonHealth > 0 || tyrexHealth > 0);
 }
 
-int getInstruction() {
+int getInstructionWarrior() {
   print("Choose attack :");
   print("1. Basic attack\n2. Blaze Blade\n3. Rain Swords");
+  int choose = int.tryParse(stdin.readLineSync());
+  return choose;
+}
+
+int getInstructionArcher() {
+  print("Choose attack :");
+  print("1. Basic attack\n2. Hunter Tiger\n3. Spectrum Arrow");
   int choose = int.tryParse(stdin.readLineSync());
   return choose;
 }
